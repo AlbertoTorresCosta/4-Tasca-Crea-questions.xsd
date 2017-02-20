@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="questions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="10" name="question"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="question">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="type"/>
+        <xs:element name="title"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="option"/>
+        <xs:element maxOccurs="unbounded" name="answer"/>
+      </xs:sequence>
+      <xs:attribute type="xs:NCName" use="required" name="id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element type="xs:string" name="type"/>
+  <xs:element type="xs:string" name="title"/>
+  <xs:element type="xs:string" name="option"/>
+  <xs:element type="xs:string" name="answer"/>
+</xs:schema>
